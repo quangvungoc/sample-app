@@ -61,14 +61,14 @@ p {
 	float: left;
 	margin-right: 10px;
 	font-size: 1.7em;
-	color: white;
+	color: $white;
 	text-transform: uppercase;
 	letter-spacing: -1px;
 	padding-top: 9px;
 	font-weight: bold;
 	line-height: 1;
 	&:hover {
-		color: white;
+		color: $white;
 		text-decoration: none;
 	}
 }
@@ -78,12 +78,12 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
+  border-top: 1px solid $grayLight;
   color: $grayLight;
   a {
-    color: #gray;
+    color: $gray;
     &:hover {
-      color: #grayDarker;
+      color: $grayDarker;
     }
   }
 
