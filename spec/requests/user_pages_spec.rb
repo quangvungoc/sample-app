@@ -47,6 +47,16 @@ describe "User pages" do
 		end
 	end
 
+	describe "admins try to destroy themselves" do
+		let(:admin) { FactoryGirl.create(:admin)}
+		before do
+			sign_in admin, no_capybara: true
+			delete user_path(admin)
+		end
+		
+		specify { expect(User.first).to eq admin}
+	end
+
 	describe "signup page" do
 		before { visit signup_path }
 
