@@ -26,6 +26,10 @@ module SessionsHelper
     	@current_user ||= User.find_by(remember_token: remember_token)
   	end
 
+    def current_user?(user)
+      user == current_user
+    end
+
   	def sign_out
   		# change remember_token for security reason as the cookies may be
   		# stolen since normally deleting the cookies from the browser should
@@ -35,4 +39,15 @@ module SessionsHelper
     	cookies.delete(:remember_token)
     	self.current_user = nil
   	end
+
+    #friendly forwarding
+    def redirect_back_or(default)
+      # if return_to == nil then default else return_to
+      redirect_to(session[:return_to] || default)
+      session.delete(:return_to)
+    end
+
+    def store_location
+      session[:return_to] = request.url if request.get?
+    end
 end
