@@ -15,3 +15,16 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+function CountCharLeft(object)
+{
+  var iMaxLen = 140;
+  var iCurLen = object.value.length;
+  var cleft = iMaxLen-iCurLen;
+  document.getElementById('ccleft').innerHTML = cleft;
+  if (cleft < 2) {
+  	document.getElementById('ccword').innerHTML = 'character'
+  }
+  else {
+  	document.getElementById('ccword').innerHTML = 'characters'
+  }
+}
