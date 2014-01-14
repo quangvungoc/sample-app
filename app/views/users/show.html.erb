@@ -14,10 +14,10 @@
   </aside>
   <div class="span8">
     <%= render 'follow_form' if signed_in? %>
-    <% @feed_items = @microposts %>
+    <% @items = @microposts %>
     <% if @microposts.any? %>
       <h3>Microposts (<%= @microposts.count %>)</h3>
     <% end %>
-  	<%= render 'shared/feed' %>
+  	<%= render 'shared/items' %>
   </div>
 </div>
